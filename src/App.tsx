@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 import { ApolloClient, gql, useQuery } from "@apollo/client";
 
 const GET_USERS = gql`
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <h1>GitHub Repositories</h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
