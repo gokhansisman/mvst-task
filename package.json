@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "start" : "yarn dev"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
