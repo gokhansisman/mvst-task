@@ -3,12 +3,13 @@ import "./App.css";
 import { ApolloClient, gql, useQuery } from "@apollo/client";
 import SearchBar from "./components/SearchBar/SearchBar";
 import UserSearch from "./pages/UserSearch";
+import AppRoutes from "./routes";
 
 function App() {
   return (
     <div className="App">
       <h1>GitHub Repositories With Search Functionality</h1>
-      <UserSearch />
+      <AppRoutes />
     </div>
   );
 }

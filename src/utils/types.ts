@@ -3,7 +3,7 @@ export type Node = {
   id: string;
   name: string;
   avatarUrl: string;
-  username: string;
+  login: string;
 };
 
 export type UserResult = {
