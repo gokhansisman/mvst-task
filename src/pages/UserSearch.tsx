@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar/SearchBar";
 import UsersResultList from "../components/UserResultList/UserResultList";
 import { GET_USERS } from "../graphql/getUser";
-
+import Loader from "../assets/loading.svg";
 const UserSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [getUsers, { loading: loadingUsers, data: userData }] = useLazyQuery(
@@ -26,7 +26,7 @@ const UserSearch = () => {
     <div>
       <SearchBar onSearch={setSearchTerm} searchType="user" />
       {loadingUsers ? (
-        <h3>Loading...</h3>
+        <img src={Loader} style={{ marginTop: 16 }} />
       ) : (
         <UsersResultList userResults={userData && userData.search.edges} />
       )}
