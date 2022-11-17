@@ -1,28 +1,33 @@
 import { useLazyQuery } from "@apollo/client";
-import React, { useEffect, useState } from "react";
-import SearchBar from "../components/SearchBar/SearchBar";
-import UsersResultList from "../components/UserResultList/UserResultList";
-import { GET_USERS } from "../graphql/getUser";
-
+import { useEffect } from "react";
+import { GET_REPOSITORIES } from "../graphql/getRepositories";
+import { useLocation } from "react-router-dom";
+import RepositoryList from "../components/RepositoryList/RepositoryList";
+import { Link } from "react-router-dom";
 const RepositorySearch = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [getUsers, { loading: loadingUsers, data: userData }] = useLazyQuery(
-    GET_USERS,
-    {
-      variables: { userQuery: searchTerm },
-    }
-  );
+  const location = useLocation();
+  const username = location.pathname.split("/")[1];
+  const [
+    getRepositories,
+    { loading: loadingRepositories, data: repositoriesData },
+  ] = useLazyQuery(GET_REPOSITORIES, {
+    variables: { username: username },
+  });
 
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      if (searchTerm.length > 2) {
-        getUsers();
-      }
-    }, 3000);
-    return () => clearTimeout(delayDebounceFn);
-  }, [searchTerm]);
-
-  return <div>Repository Search</div>;
+    getRepositories();
+  }, []);
+  return (
+    <div>
+      <Link to="/">Back to search user</Link>
+      <h4>Repository Search</h4>
+      <RepositoryList
+        repositories={
+          repositoriesData && repositoriesData.user.repositories.nodes
+        }
+      />
+    </div>
+  );
 };
 
 export default RepositorySearch;

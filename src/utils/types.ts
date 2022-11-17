@@ -1,4 +1,3 @@
-
 export type Node = {
   id: string;
   name: string;
@@ -7,6 +6,19 @@ export type Node = {
 };
 
 export type UserResult = {
-    node: Node;
-  };
-  
+  node: Node;
+};
+
+export type Repository = {
+  id: string;
+  name: string;
+  url: string;
+  description: string;
+  updatedAt: Date;
+  primaryLanguage: Language;
+};
+
+export type Language = {
+  id: string;
+  name: string;
+}
