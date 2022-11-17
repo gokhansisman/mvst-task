@@ -13,11 +13,16 @@ const RepositoryCard = ({ repo }: RepositoryProps) => {
       {repo && (
         <>
           <div>
-            <p>{repo.name}</p>
-            <p>{repo.description}</p>
+            <div className="title">{repo.name}</div>
+            <div className="description">
+              {repo.description && "No description" + " "}
+              <span className="repo-language-color" />
+              {" " + repo.primaryLanguage?.name}
+            </div>
           </div>
-          <span>{repo.primaryLanguage?.name}</span>
-          <Moment date={repo.updatedAt} fromNow />
+          <div className="updated">
+            Updated <Moment date={repo.updatedAt} fromNow />
+          </div>
         </>
       )}
     </div>
