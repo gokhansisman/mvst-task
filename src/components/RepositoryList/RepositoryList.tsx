@@ -14,6 +14,7 @@ const RepositoryList = ({ repositories }: RepositoryListProps) => {
     repositories.filter((repo) => {
       return repo.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
+
   return (
     <div className="repositoryList">
       <SearchBar onSearch={setSearchTerm} searchType="repository"/>

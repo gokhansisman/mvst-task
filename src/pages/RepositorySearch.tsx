@@ -18,8 +18,10 @@ const RepositorySearch = () => {
     getRepositories();
   }, []);
   return (
-    <div>
-      <Link to="/">Back to search user</Link>
+    <div className="back">
+      <Link to="/">
+        <span style={{ fontSize: "18px" }}>&#60;</span> Back to search user
+      </Link>
       <RepositoryList
         repositories={
           repositoriesData && repositoriesData.user.repositories.nodes
