@@ -20,7 +20,6 @@ const RepositorySearch = () => {
   return (
     <div>
       <Link to="/">Back to search user</Link>
-      <h4>Repository Search</h4>
       <RepositoryList
         repositories={
           repositoriesData && repositoriesData.user.repositories.nodes

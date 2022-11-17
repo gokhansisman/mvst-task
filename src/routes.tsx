@@ -1,6 +1,4 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import history from "./history";
 import RepositorySearch from "./pages/RepositorySearch";
 import UserSearch from "./pages/UserSearch";
 

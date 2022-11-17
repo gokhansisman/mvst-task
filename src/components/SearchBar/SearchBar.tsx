@@ -5,15 +5,16 @@ import "./SearchBar.less";
 
 type SearchBarProps = {
   onSearch: (searchTerm: string) => void;
+  searchType: string;
 };
-const SearchBar = ({ onSearch }: SearchBarProps) => {
+const SearchBar = ({ onSearch, searchType }: SearchBarProps) => {
   return (
     <input
       autoFocus
       type="text"
       autoComplete="off"
       className="container"
-      placeholder="Search here..."
+      placeholder={`Search for a ${searchType}`}
       onChange={(e) => onSearch(e.target.value)}
     />
   );

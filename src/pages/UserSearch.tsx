@@ -24,8 +24,7 @@ const UserSearch = () => {
 
   return (
     <div>
-      UserSearch
-      <SearchBar onSearch={setSearchTerm} />
+      <SearchBar onSearch={setSearchTerm} searchType="user" />
       {loadingUsers ? (
         <h3>Loading...</h3>
       ) : (
