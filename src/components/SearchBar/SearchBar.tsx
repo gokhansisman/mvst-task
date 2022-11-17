@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { GET_USERS } from "../../graphql/getUser";
 import "./SearchBar.less";
 
-type SearchBarProps = {
+export type SearchBarProps = {
   onSearch: (searchTerm: string) => void;
   searchType: string;
 };
