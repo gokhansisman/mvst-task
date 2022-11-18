@@ -30,7 +30,7 @@ const UserSearch = () => {
       ) : (
         <UsersResultList userResults={userData && userData.search.edges} />
       )}
-      {userData && userData.search.edges.length === 0 && <div>User not found</div>}
+      {userData && userData.search.edges.length === 0 && <div className="not-found">User not found</div>}
     </div>
   );
 };
