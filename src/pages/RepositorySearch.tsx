@@ -20,7 +20,7 @@ const RepositorySearch = () => {
   return (
     <div className="back">
       <Link to="/">
-        <span style={{ fontSize: "18px" }}>&#60;</span> Back to search user
+        <span>&#60;</span> Back to search user
       </Link>
       <RepositoryList
         repositories={

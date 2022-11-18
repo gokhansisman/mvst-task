@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Repository, UserResult } from "../../utils/types";
-import RepositoryCard from "../Repository/RepositoryCard";
+import RepositoryCard from "../RepositoryCard/RepositoryCard";
 import SearchBar from "../SearchBar/SearchBar";
 import "./RepositoryList.less";
-type RepositoryListProps = {
+export type RepositoryListProps = {
   repositories: Repository[];
 };
 
@@ -17,7 +17,7 @@ const RepositoryList = ({ repositories }: RepositoryListProps) => {
 
   return (
     <div className="repositoryList">
-      <SearchBar onSearch={setSearchTerm} searchType="repository"/>
+      <SearchBar onSearch={setSearchTerm} searchType="repository" />
       {filteredRepos &&
         filteredRepos.map((repository) => <RepositoryCard repo={repository} />)}
     </div>

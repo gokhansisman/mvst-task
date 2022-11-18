@@ -1,7 +1,7 @@
 import { UserResult } from "../../utils/types";
 import UserResultCard from "../UserResultCard/UserResultCard";
 import "./UserResultList.less";
-type UsersResultListProps = {
+export type UsersResultListProps = {
   userResults: UserResult[];
 };
 

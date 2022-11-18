@@ -3,18 +3,18 @@ import { UserResult } from "../../utils/types";
 import "./UserResultCard.less";
 import { Link } from "react-router-dom";
 
-type UserResultCardProps = {
+export type UserResultCardProps = {
   user: UserResult;
 };
 const UserResultCard = ({ user }: UserResultCardProps) => {
   return (
     <div className="userResultCardContainer">
-      <Link to={`/${user.node.login}`} className="test">
+      <Link to={`/${user&&user.node.login}`} className="test">
         <div className="container">
           <div className="picture">
-            <img src={user.node.avatarUrl} />
+            <img src={user&&user.node.avatarUrl} />
           </div>
-          <div>{user.node.login}</div>
+          <div>{user&&user.node.login}</div>
         </div>
       </Link>
     </div>

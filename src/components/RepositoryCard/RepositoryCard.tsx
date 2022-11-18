@@ -4,10 +4,10 @@ import "./RepositoryCard.less";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
-type RepositoryProps = {
+export type RepositoryCardProps = {
   repo: Repository;
 };
-const RepositoryCard = ({ repo }: RepositoryProps) => {
+const RepositoryCard = ({ repo }: RepositoryCardProps) => {
   return (
     <div className="repositoryCard">
       {repo && (
