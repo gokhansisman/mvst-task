@@ -14,7 +14,9 @@ const UsersResultList = ({ userResults }: UsersResultListProps) => {
   return (
     <div className="userResultList">
       {userResults &&
-        userResults.map((userResult) => <UserResultCard user={userResult} />)}
+        userResults.map((userResult) => (
+          <UserResultCard user={userResult} key={userResult.node.id} />
+        ))}
     </div>
   );
 };

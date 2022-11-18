@@ -24,7 +24,9 @@ const RepositoryList = ({ repositories }: RepositoryListProps) => {
     <div className="repositoryList">
       <SearchBar onSearch={setSearchTerm} searchType="repository" />
       {filteredRepos &&
-        filteredRepos.map((repository) => <RepositoryCard repo={repository} />)}
+        filteredRepos.map((repository) => (
+          <RepositoryCard repo={repository} key={repository.id} />
+        ))}
     </div>
   );
 };
