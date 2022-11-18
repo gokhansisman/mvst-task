@@ -7,6 +7,11 @@ import Moment from "react-moment";
 export type RepositoryCardProps = {
   repo: Repository;
 };
+/**
+ * RepositoryCard component displasy repository information
+ * @param {Repository} repo Take 1 repository as a param with type of Repository.
+ * @returns {JSX.Element} Returns a JSX.Element
+ */
 const RepositoryCard = ({ repo }: RepositoryCardProps) => {
   return (
     <div className="repositoryCard">
