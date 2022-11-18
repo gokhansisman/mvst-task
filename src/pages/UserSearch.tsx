@@ -18,7 +18,7 @@ const UserSearch = () => {
       if (searchTerm.length > 2) {
         getUsers();
       }
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm]);
 
@@ -30,6 +30,7 @@ const UserSearch = () => {
       ) : (
         <UsersResultList userResults={userData && userData.search.edges} />
       )}
+      {userData && userData.search.edges.length === 0 && <div>User not found</div>}
     </div>
   );
 };
